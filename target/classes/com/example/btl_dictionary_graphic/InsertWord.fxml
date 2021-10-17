@@ -11,20 +11,21 @@
   <AnchorPane minHeight="0.0" minWidth="0.0">
     <Button alignment="CENTER" contentDisplay="CENTER" layoutX="16.5" layoutY="27.875" mnemonicParsing="false" onAction="#switchToDictionaryLookUp" prefHeight="25.0" prefWidth="100.0" text="Tra từ" textAlignment="CENTER" />
     <Button alignment="CENTER" contentDisplay="CENTER" layoutX="16.5" layoutY="80.75" mnemonicParsing="false" onAction="#switchToTranslate" prefHeight="25.0" prefWidth="100.0" text="Dịch văn bản" textAlignment="CENTER" />
-    <Button alignment="CENTER" contentDisplay="CENTER" layoutX="16.5" layoutY="133.625" mnemonicParsing="false" onAction="#switchToInsertWord" prefHeight="25.0" prefWidth="100.0" text="Thêm từ" textFill="#0000f0" />
-    <Button alignment="CENTER" contentDisplay="CENTER" layoutX="16.5" layoutY="239.375" mnemonicParsing="false" onAction="#switchToRemoveWord" prefHeight="25.0" prefWidth="100.0" text="Xóa từ" />
-    <Button alignment="CENTER" contentDisplay="CENTER" layoutX="16.5" layoutY="186.5" mnemonicParsing="false" onAction="#switchToFixWord" prefHeight="25.0" prefWidth="100.0" text="Sửa nghĩa" />
-    <Button alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="16.5" layoutY="292.25" mnemonicParsing="false" onAction="#switchToShowAllWords" prefHeight="25.0" prefWidth="100.0" text="Danh sách từ" wrapText="true" />
-    <Button alignment="CENTER" contentDisplay="CENTER" layoutX="16.5" layoutY="345.125" mnemonicParsing="false" onAction="#switchToMenu" prefHeight="25.0" prefWidth="100.0" text="Quay lại" />
+    <Button alignment="CENTER" contentDisplay="CENTER" layoutX="16.5" layoutY="133.625" mnemonicParsing="false" onAction="#switchToInsertWord" prefHeight="25.0" prefWidth="100.0" text="Thêm từ" textAlignment="CENTER" textFill="#0000f0" />
+    <Button alignment="CENTER" contentDisplay="CENTER" layoutX="16.5" layoutY="239.375" mnemonicParsing="false" onAction="#switchToRemoveWord" prefHeight="25.0" prefWidth="100.0" text="Xóa từ" textAlignment="CENTER" />
+    <Button alignment="CENTER" contentDisplay="CENTER" layoutX="16.5" layoutY="186.5" mnemonicParsing="false" onAction="#switchToFixWord" prefHeight="25.0" prefWidth="100.0" text="Sửa nghĩa" textAlignment="CENTER" />
+    <Button alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="16.5" layoutY="292.25" mnemonicParsing="false" onAction="#switchToShowAllWords" prefHeight="25.0" prefWidth="100.0" text="Danh sách từ" textAlignment="CENTER" wrapText="true" />
+    <Button alignment="CENTER" contentDisplay="CENTER" layoutX="16.5" layoutY="345.125" mnemonicParsing="false" onAction="#switchToMenu" prefHeight="25.0" prefWidth="100.0" text="Quay lại" textAlignment="CENTER" />
   </AnchorPane>
   <AnchorPane minHeight="0.0" minWidth="0.0">
     <Label layoutX="14.0" layoutY="167.0" text="Từ bạn muốn thêm" />
     <TextField layoutX="155.0" layoutY="163.0" />
     <Label layoutX="14.0" layoutY="235.0" text="Nghĩa của từ" />
     <TextField layoutX="155.0" layoutY="231.0" />
-    <Button alignment="CENTER" contentDisplay="CENTER" layoutX="155.0" layoutY="296.0" mnemonicParsing="false" text="Hủy" />
-    <Button alignment="CENTER" contentDisplay="CENTER" layoutX="240.0" layoutY="296.0" mnemonicParsing="false" text="Xác nhận" />
+    <Button alignment="CENTER" contentDisplay="CENTER" layoutX="197.0" layoutY="300.0" mnemonicParsing="false" text="Xác nhận" />
     <Label layoutX="14.0" layoutY="102.0" text="Chọn ngôn ngữ" />
-    <ChoiceBox layoutX="155.0" layoutY="98.0" prefWidth="150.0" />
+    <ChoiceBox fx:id="languagesBox" layoutX="155.0" layoutY="98.0" prefWidth="150.0" />
+      <Label layoutX="155.0" layoutY="199.0" text="Từ bạn vừa nhập không tồn tại" textFill="RED" visible="false" />
+      <Label layoutX="155.0" layoutY="199.0" text="Từ khả dụng" textFill="LIME" visible="false" />
   </AnchorPane>
 </SplitPane>
