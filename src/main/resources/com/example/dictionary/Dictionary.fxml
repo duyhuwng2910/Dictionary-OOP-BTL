@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="750.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionary.DictionaryController">
+  <tabs>
+    <Tab text="Từ điển">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="textFieldSearcher" layoutX="14.0" layoutY="14.0" onKeyReleased="#onChangeTextFieldSearcher" prefHeight="25.0" prefWidth="636.0" promptText="Nhập từ vào đây" />
+                  <ImageView fitHeight="60.0" fitWidth="25.0" layoutX="715.0" layoutY="15.0" onMouseClicked="#onClickRemoveIcon" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../image/close.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="60.0" fitWidth="25.0" layoutX="655.0" layoutY="15.0" onMouseClicked="#onClickFindIcon" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../image/search.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="60.0" fitWidth="25.0" layoutX="685.0" layoutY="15.0" onMouseClicked="#onClickListenIcon" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../image/volume.png" />
+                     </image>
+                  </ImageView>
+                  <ListView fx:id="listViewSearcher" layoutX="14.0" layoutY="50.0" onKeyPressed="#onPushItemOfListViewSearcher" onMouseClicked="#onPushItemOfListViewSearcher" prefHeight="350.0" prefWidth="160.0" />
+                  <Button fx:id="buttonAddNewWord" alignment="CENTER_RIGHT" layoutX="180.0" layoutY="50.0" mnemonicParsing="false" onMouseClicked="#onClickButtonAddNewWord" prefHeight="30.0" prefWidth="110.0" text="Thêm từ mới" />
+                  <Button fx:id="buttonFixWord" alignment="CENTER_RIGHT" layoutX="295.0" layoutY="50.0" mnemonicParsing="false" onMouseClicked="#onClickButtonFixWord" prefHeight="30.0" prefWidth="120.0" text="Thay đổi nghĩa" />
+                  <Button fx:id="buttonRemoveWord" alignment="CENTER_RIGHT" layoutX="420.0" layoutY="50.0" mnemonicParsing="false" onMouseClicked="#onClickButtonRemoveWord" prefHeight="30.0" prefWidth="80.0" text="Xóa từ" />
+                  <Button fx:id="buttonShowAllWords" alignment="CENTER_RIGHT" layoutX="505.0" layoutY="50.0" mnemonicParsing="false" onMouseClicked="#onClickButtonShowAllWords" prefHeight="30.0" prefWidth="110.0" text="Danh sách từ" />
+                  <ImageView fitHeight="50.0" fitWidth="25.0" layoutX="186.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../image/add.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="60.0" fitWidth="25.0" layoutX="510.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../image/list.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="60.0" fitWidth="25.0" layoutX="424.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../image/remove.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="60.0" fitWidth="25.0" layoutX="298.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../image/technics.png" />
+                     </image>
+                  </ImageView>
+                  <VBox fx:id="vBoxAddNewWord" layoutX="180.0" layoutY="88.0" prefHeight="75.0" prefWidth="115.0" visible="false">
+                     <children>
+                        <TextField fx:id="textFieldAddEnglish" onMouseClicked="#onClickButtonSubmitAddNewWord" promptText="Tiếng Anh" />
+                        <TextField fx:id="textFieldAddVietnamese" promptText="Tiếng Việt" />
+                        <Button fx:id="buttonSubmitAddNewWord" mnemonicParsing="false" onMouseClicked="#onClickButtonSubmitAddNewWord" text="Xác nhận" />
+                     </children>
+                  </VBox>
+                  <VBox fx:id="vBoxFixWord" layoutX="295.0" layoutY="88.0" prefHeight="75.0" prefWidth="115.0" visible="false">
+                     <children>
+                        <TextField fx:id="textFieldWordNeedsChanging" promptText="Tiếng Anh" />
+                        <TextField fx:id="textFieldChangeMeaningOfWord" promptText="Tiếng việt" />
+                        <Button fx:id="buttonSubmitFixWord" mnemonicParsing="false" onMouseClicked="#onClickButtonSubmitFixWord" text="Xác nhận" />
+                     </children>
+                  </VBox>
+                  <ListView fx:id="listViewShowWord" layoutX="180.0" layoutY="185.0" prefHeight="215.0" prefWidth="555.0" />
+                  <VBox fx:id="vBoxRemoveWord" layoutX="420.0" layoutY="88.0" prefHeight="75.0" prefWidth="115.0" visible="false">
+                     <children>
+                        <TextField fx:id="textFieldRemoveWord" onMouseClicked="#onClickButtonSubmitAddNewWord" promptText="Tiếng Anh" />
+                        <Button fx:id="buttonSubmitRemoveWord" mnemonicParsing="false" onMouseClicked="#onClickButtonSubmitRemoveWord" text="Xác nhận" />
+                     </children>
+                  </VBox>
+                  <Button fx:id="buttonShowHistory" layoutX="620.0" layoutY="50.0" mnemonicParsing="false" onMouseClicked="#onClickButtonShowHistory" prefHeight="30.0" prefWidth="120.0" text="Lịch sử tìm kiếm" />
+                  <VBox fx:id="vBoxYourList" layoutX="620.0" layoutY="115.0" prefHeight="50.0" prefWidth="120.0" visible="false">
+                     <children>
+                        <Button fx:id="buttonAddNewWordToYourList" mnemonicParsing="false" onMouseClicked="#onClickButtonAddNewWordToYourList" prefHeight="25.0" prefWidth="120.0" text="Thêm mới" />
+                        <Button fx:id="buttonShowYourList" mnemonicParsing="false" onMouseClicked="#onClickButtonShowYourList" prefHeight="25.0" prefWidth="134.0" text="Danh sách" />
+                     </children>
+                  </VBox>
+                  <Button fx:id="buttonYourList" layoutX="620.0" layoutY="85.0" mnemonicParsing="false" onMouseClicked="#onClickButtonYourList" prefHeight="30.0" prefWidth="120.0" text="Từ của tôi" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Google dịch">
+         <content>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <TextArea layoutX="20.0" layoutY="80.0" prefHeight="200.0" prefWidth="325.0" />
+                  <TextArea layoutX="405.0" layoutY="80.0" prefHeight="200.0" prefWidth="325.0" />
+                  <Button layoutX="20.0" layoutY="12.0" mnemonicParsing="false" text="Anh - Việt" />
+                  <Button layoutX="20.0" layoutY="47.0" mnemonicParsing="false" text="Việt - Anh" />
+                  <Button layoutX="349.0" layoutY="328.0" mnemonicParsing="false" text="Dịch" />
+               </children>
+            </AnchorPane>
+         </content>
+    </Tab>
+  </tabs>
+</TabPane>
